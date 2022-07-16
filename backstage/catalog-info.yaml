@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "utkarsh"
+  description: "dsdsd"  
+  annotations:
+    github.com/project-slug: utkarshneo/rkk
+spec:
+  type: service
+  owner: "guests"
+  lifecycle: experimental

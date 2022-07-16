@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: utkarsh
+spec:
+  replicas: 
+  selector:
+    matchLabels:
+      app: utkarsh
+  template:
+    metadata:
+      labels:
+        app: utkarsh
+    spec:
+      containers:
+      - name: utkarsh
+        image: neosample.jfrog.io/default-abc-docker/utkarshneo/rkk:1
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+        - name: jfrog
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: utkarsh
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+  selector:
+    app: utkarsh
